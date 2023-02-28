@@ -1,0 +1,36 @@
+FROM node:18.8.0-alpine AS FrontStage
+
+WORKDIR /usr/src/
+
+COPY ui-app ./ui-app
+RUN cd ui-app && yarn install && yarn build
+
+FROM alpine/git AS UPylibs
+
+WORKDIR /tmp
+
+RUN mkdir -p /tmp/libs
+
+#Dowload libs
+RUN git clone https://github.com/nickovs/slimDNS
+
+# Partial download files
+RUN mkdir microdot && cd microdot
+RUN git init && git remote add -f origin https://github.com/miguelgrinberg/microdot
+RUN git config core.sparseCheckout true
+RUN echo "src/" >> .git/info/sparse-checkout
+RUN git pull origin main
+RUN cp src/microdot.py src/microdot_websocket.py src/microdot_asyncio.py src/microdot_asyncio_websocket.py /tmp/libs/.
+RUN cd /tmp
+
+FROM micropython/unix:v1.19 as BackStage
+
+RUN mkdir app
+WORKDIR /usr/src/app
+
+COPY --from=UPylibs /tmp/libs /tmp/libs
+RUN cp -n /tmp/libs/*.py /usr/src/app/.
+COPY --from=FrontStage /usr/src/ui-app/dist /usr/src/app/dist
+COPY ./microserver ./
+
+CMD [ "micropython-dev", "app.py" ]

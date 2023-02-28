@@ -1,0 +1,1 @@
+export const SERVER: string = import.meta.env.VITE_SERVER || window.location.host;

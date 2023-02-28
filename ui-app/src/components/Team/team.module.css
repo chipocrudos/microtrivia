@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+}
+
+.teamName {
+    padding-top: 10px;
+    font-size: 1.8rem;
+}
+
+.teamScore {
+    width: auto;
+    justify-self: center;
+}
+
+@media (max-width: 880px) {
+    .teamName {
+        font-size: 1.6rem;
+
+    }
+}
+
+@media (max-width: 642px) {
+    .teamName {
+        font-size: 1.2rem;
+
+    }
+
+}

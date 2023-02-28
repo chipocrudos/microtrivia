@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "DateStamp";
+    src: local("DateStamp"),
+      url("./fonts/Date-Stamp.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "DateStampAlt";
+    src: local("DateStampAlt"),
+      url("./fonts/Date-Stamp-Alt.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "DateStampAltBold";
+    src: local("DateStampAltBold"),
+      url("./fonts/Date-Stamp-Alt-Bold.woff") format("woff");
+  }

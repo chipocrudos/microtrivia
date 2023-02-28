@@ -1,0 +1,63 @@
+
+.row {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 10px 0px 10px 0px;
+    margin: 20px 0px 10px 0px;
+    justify-content: space-around;
+}
+
+.title{
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 20px 0px 5px 0px;
+    padding: 0;
+    height: auto;
+}
+
+.round{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 20px 0px 5px 0px;
+    padding: 0;
+    height: auto;
+    color: rgb(0, 89, 255);
+}
+
+.roundNumber{
+    font-size: 3.4rem;
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+    padding: 0;
+    height: auto;
+    color: rgb(31, 143, 50);
+    font-family: "DateStamp";
+}
+
+
+.iconWhite {
+	color:white;
+}
+
+@media (max-width: 880px) {
+	
+    .fail{
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .fail:before, .fail:after{
+        
+        width: 8px;
+        height: 38px;
+        left: 15px;
+        top: 0px;
+    }
+
+    .rowSpace {
+        margin-top: 120px;
+    }
+
+}

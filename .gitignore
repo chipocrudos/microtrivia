@@ -1,0 +1,4 @@
+**/__pycache__
+AppFiles
+.env
+**microdot*.py

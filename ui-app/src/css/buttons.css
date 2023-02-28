@@ -1,0 +1,59 @@
+
+
+.btn {
+	min-width: 200px;
+	width: auto;
+	height: 45px;
+	color: white;
+	background-color: #f1f1f1;
+	border: none;
+	padding: 2px;
+	margin: 3px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 600;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn:hover {
+	opacity: 90%;
+}
+
+.btn:active {
+	transform: translateY(2px);
+}
+  
+.btn-block {
+	width: 100%;
+}
+
+.btn-primary {
+	background-color: var(--primary)
+}
+
+.btn-success {
+	background-color: var(--success)
+}
+
+.btn-secondary {
+	background-color: var(--secondary)
+}
+
+.btn-alert {
+	background-color: var(--alert)
+}
+.btn-info {
+	background-color: var(--info)
+}
+
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.disabled:active {
+	transform: none;
+}
